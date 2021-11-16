@@ -22,7 +22,7 @@ const style = {
 
 const BookingModal = ({bookingOpen, handleBookingClose, booking, date, setBookingSuccess}) => {  
     const {user} = useAuth();
-    const {name, time} = booking;
+    const {name, time, price} = booking;
     const initialInfo = {patientName: user.displayName, email: user.email, phone: '' }
     const [bookingInfo, setBookingInfo] = useState(initialInfo);
     
@@ -32,6 +32,7 @@ const BookingModal = ({bookingOpen, handleBookingClose, booking, date, setBookin
       const newInfo = {...bookingInfo};
       newInfo[field] = value;
       setBookingInfo(newInfo)
+      console.log(newInfo)
     }
 
     const handleBookingSubmit = e => {
@@ -40,6 +41,7 @@ const BookingModal = ({bookingOpen, handleBookingClose, booking, date, setBookin
       const appointment = {
          ...bookingInfo,
          time,
+         price,
          serviceName: name,
          date: date.toLocaleDateString(),
       }
@@ -78,6 +80,13 @@ const BookingModal = ({bookingOpen, handleBookingClose, booking, date, setBookin
                   sx={{width: '100%',  m: 1}}
                   id="outlined-size-small"
                   defaultValue={time}
+                  size="small"
+                />
+                <TextField
+                  sx={{width: '100%',  m: 1}}
+                  id="outlined-size-small"
+                  name="price"
+                  defaultValue={price}
                   size="small"
                 />
                 <TextField
