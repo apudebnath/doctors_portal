@@ -55,11 +55,12 @@ function DashBoard(props) {
         </Link>
         <Link style={{textDecoration:'none', color: 'dark' }} to={`${url}`}>
             <Button color="inherit">DashBoard</Button>
-        </Link>
+        </Link> <br/>
         {admin && <Box>
             <Link style={{textDecoration:'none', color: 'dark' }} to={`${url}/admin`}>
                 <Button color="inherit">Admin</Button>
             </Link>
+            <br/>
             <Link style={{textDecoration:'none', color: 'dark' }} to={`${url}/adddoctor`}>
                 <Button color="inherit">Add Doctor</Button>
             </Link>

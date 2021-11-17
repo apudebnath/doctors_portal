@@ -12,7 +12,7 @@ const CheckoutForm = ({appointment}) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://aqueous-woodland-69983.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -79,7 +79,7 @@ const CheckoutForm = ({appointment}) => {
 
             }
             console.log(payment)
-            const url = `http://localhost:5000/appointments/${_id}`
+            const url = `https://aqueous-woodland-69983.herokuapp.com/appointments/${_id}`
             fetch(url, {
               method: 'PUT',
               headers: {
